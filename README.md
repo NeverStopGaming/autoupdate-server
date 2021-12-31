@@ -1,7 +1,7 @@
 # Autoupdate Server
 Autoupdater server for NeverStopGaming plugin to check if they are update
 
-###Install
+### Install
 
 1. Download the Reposetory from [GitHub]
 2. Build the Reposetory ``docker build . -t neverstopgaming/update-server``
