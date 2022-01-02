@@ -1,4 +1,4 @@
-node {
+stages {
 
     environment {
         WEBSPACE_CREDS = credentials('webspace')
