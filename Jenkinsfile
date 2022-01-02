@@ -1,5 +1,5 @@
 environment {
-    WEBSPACE_CREDS = credentials('jenkins-bitbucket-common-creds')
+    WEBSPACE_CREDS = credentials('webspace')
 }
 
 def remote = [:]
