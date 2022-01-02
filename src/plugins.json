@@ -1,3 +1,6 @@
 {
-    "haste": "1.0"
+    "SimpleCloud-Haste-Module": {
+        "version": "1.0",
+        "url": "Test"
+    }
 }

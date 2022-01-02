@@ -11,7 +11,7 @@ app.get('/update', (req, res) => {
     //read the json file plugins.json
     let plugins = require('./plugins.json');
 
-    res.json({"version": plugins[pluginName]});
+    res.json(plugins[pluginName]);
 
 });
 
