@@ -1,6 +1,6 @@
 def remote = [:]
-remote.name = "devserver"
-remote.host = "devserver.neverstopgaming.net"
+remote.name = "webspace"
+remote.host = "WEBSPACE_HOST"
 remote.allowAnyHosts = true
 pipeline {
     
@@ -30,7 +30,7 @@ pipeline {
 
     post {
         always {
-            discordSend description: "ProxySystem Build: " + currentBuild.currentResult, footer: "Made by SteinGaming", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: ""
+            discordSend description: "ProxySystem Build: " + currentBuild.currentResult, footer: "Made by SteinGaming", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/924398901409247272/WmvYATxvXjEdSyXCtGz5dcRr1KvuAEg__2hLnBAviv-Zz6Vd9p95LAf0qMvSHdlQnMsh"
         }
     }
 }
