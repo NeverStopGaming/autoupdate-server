@@ -16,7 +16,6 @@ pipeline {
         jdk 'jdk-16'
     }
 
-    def app
     def image = "neverstopgaming/update-server"
 
     stage('Clone repository') {
