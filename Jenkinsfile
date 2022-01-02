@@ -1,6 +1,6 @@
 def remote = [:]
-remote.name = "webspace"
-remote.host = "WEBSPACE_HOST"
+remote.name = "devserver"
+remote.host = "devserver.NeverStopGaming.net"
 remote.allowAnyHosts = true
 pipeline {
     
@@ -8,23 +8,21 @@ pipeline {
 
     stages {
         stage("Clone repository") {
-            steps {
-                sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
-            }
+            
+            sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
+            
         }
         stage("Build image") {
-            steps {
-                /* This builds the actual image; synonymous to
-                * docker build on the command line */
+            /* This builds the actual image; synonymous to
+            * docker build on the command line */
          
-                sshCommand remote: remote, command: "docker build -t ${image} ."
-            }
+            sshCommand remote: remote, command: "docker build -t ${image} ."
         }
         stage("Deploy") {
-            steps {
-                sshCommand remote: remote, command: "docker rm Update-Server"
-                sshCommand remote: remote, command: "docker run --name Update-Server -d -p 3000:3000 neverstopgaming/update-server"
-            }
+            
+            sshCommand remote: remote, command: "docker rm Update-Server"
+            sshCommand remote: remote, command: "docker run --name Update-Server -d -p 3000:3000 neverstopgaming/update-server"
+            
         }
     }
 
