@@ -1,8 +1,15 @@
-environment {
-    WEBSPACE_CREDS = credentials('webspace')
-}
-
 node {
+
+    environment {
+        WEBSPACE_CREDS = credentials('webspace')
+    }
+
+    def remote = [:]
+    remote.name = "WEBSPACE_CREDS_USR"
+    remote.password = 'WEBSPACE_CREDS_PSW'
+    remote.host = "WEBSPACE_HOST"
+    remote.allowAnyHosts = true
+
     def app
     def image = "neverstopgaming/update-server"
 
