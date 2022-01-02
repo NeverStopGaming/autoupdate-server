@@ -5,7 +5,6 @@ remote.allowAnyHosts = true
 
 node {
     def app
-    def image = "neverstopgaming/update-server"
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -17,7 +16,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        sh "docker build -t ${image} ."
+        app = docker.build("neverstopgaming/autoupdate-server")
     }
 
     stage('Deploy') {
