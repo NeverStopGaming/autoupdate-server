@@ -2,8 +2,6 @@ environment {
     WEBSPACE_CREDS = credentials('webspace')
 }
 
-sh "printenv"
-
 def remote = [:]
 remote.name = "WEBSPACE_CREDS_USR"
 remote.password = 'WEBSPACE_CREDS_PSW'
@@ -16,6 +14,7 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
+        sh "printenv"
 
         sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
     }
