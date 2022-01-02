@@ -1,28 +1,30 @@
 def remote = [:]
 remote.name = "devserver"
-remote.host = "devserver.NeverStopGaming.net"
+remote.host = "devserver.neverstopgaming.net"
 remote.allowAnyHosts = true
 pipeline {
     
     agent any
 
     stages {
-        steps("Clone repository") {
-            
-            sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
-            
+        stage("Clone repository") {
+            steps {
+                sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
+            }
         }
-        steps("Build image") {
-            /* This builds the actual image; synonymous to
-            * docker build on the command line */
+        stage("Build image") {
+            steps {
+                /* This builds the actual image; synonymous to
+                * docker build on the command line */
          
-            sshCommand remote: remote, command: "docker build -t ${image} ."
+                sshCommand remote: remote, command: "docker build -t ${image} ."
+            }
         }
-        steps("Deploy") {
-            
-            sshCommand remote: remote, command: "docker rm Update-Server"
-            sshCommand remote: remote, command: "docker run --name Update-Server -d -p 3000:3000 neverstopgaming/update-server"
-            
+        stage("Deploy") {
+            steps {
+                sshCommand remote: remote, command: "docker rm Update-Server"
+                sshCommand remote: remote, command: "docker run --name Update-Server -d -p 3000:3000 neverstopgaming/update-server"
+            }
         }
     }
 
