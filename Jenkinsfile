@@ -1,5 +1,10 @@
+environment {
+    WEBSPACE_CREDS = credentials('jenkins-bitbucket-common-creds')
+}
+
 def remote = [:]
-remote.name = "webspace"
+remote.name = "WEBSPACE_CREDS_USR"
+remote.password = 'WEBSPACE_CREDS_PSW'
 remote.host = "WEBSPACE_HOST"
 remote.allowAnyHosts = true
 
