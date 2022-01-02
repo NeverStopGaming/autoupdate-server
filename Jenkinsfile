@@ -1,6 +1,6 @@
 def remote = [:]
 remote.name = "webspace"
-remote.host = "${WEBSPACE_HOST}"
+remote.host = "WEBSPACE_HOST"
 remote.allowAnyHosts = true
 
 node {
