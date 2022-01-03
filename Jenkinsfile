@@ -26,7 +26,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sshCommand remote: remote, command: "cd autoupdate-server; docker rm Update-Server; docker run --name Update-Server -d -p 3000:3000 neverstopgaming/update-server"
+                sshCommand remote: remote, command: "cd autoupdate-server; docker rm Update-Server; docker run --name Update-Server -d -p 803:3000 neverstopgaming/update-server"
             }
         }
     }
