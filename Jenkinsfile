@@ -1,7 +1,7 @@
 def remote = [:]
 remote.name = "webspace"
-remote.host = "${WEBSPACE_HOST}"
-withCredentials([usernamePassword(credentialsId: "webspace", passwordVariable: 'password', usernameVariable: 'userName')]) {
+withCredentials([string(credentialsId: "WEBSPACE_HOST", variable: "host"),usernamePassword(credentialsId: "webspace", passwordVariable: 'password', usernameVariable: 'userName')]) {
+    remote.host = host    
     remote.user = userName
     remote.password = password
 }
