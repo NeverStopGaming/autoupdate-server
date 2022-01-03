@@ -33,7 +33,7 @@ pipeline {
 
     post {
         always {
-            discordSend description: "ProxySystem Build: " + currentBuild.currentResult, footer: "Made by SteinGaming", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/924398901409247272/WmvYATxvXjEdSyXCtGz5dcRr1KvuAEg__2hLnBAviv-Zz6Vd9p95LAf0qMvSHdlQnMsh"
+            discordSend description: "" + currentBuild.currentResult, footer: "Made by SteinGaming", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://canary.discord.com/api/webhooks/927533140916977696/TwP_p6zm-CtgRXquJWRZ2DShlVqfBJJ5YqcIPQeYneQ21A7cLQm6azhaMThKY3yt0cVW"
         }
     }
 }
