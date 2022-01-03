@@ -18,6 +18,13 @@ pipeline {
         }
         stage("Build image") {
             steps {
+                /* removes the Docker image */
+         
+                sshCommand remote: remote, command: "docker rmi neverstopgaming/update-server"
+            }
+        }
+        stage("Build image") {
+            steps {
                 /* This builds the actual image; synonymous to
                 * docker build on the command line */
          
