@@ -21,7 +21,7 @@ pipeline {
                 /* This builds the actual image; synonymous to
                 * docker build on the command line */
          
-                sshCommand remote: remote, command: "cd autoupdate-server; docker build . -t neverstopgaming/update-server"
+                sshCommand remote: remote, command: "cd autoupdate-server; docker build -t dockerfile . neverstopgaming/update-server"
             }
         }
         stage("Deploy") {
