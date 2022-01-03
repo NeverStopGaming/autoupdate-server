@@ -11,29 +11,24 @@ pipeline {
     agent any
 
     stages {
-        stage("Clone repository") {
+        stage("Deleting Docker") {
+            steps {
+                sshCommand remote: remote, command: "docker stop Update-Server; docker rm Update-Server; docker rmi neverstopgaming/update-server"
+            }
+        }
+        stage("Clone repository and Delete old Ordner") {
             steps {
                 sshCommand remote: remote, command: "rm -rf autoupdate-server; git clone https://github.com/NeverStopGaming/autoupdate-server.git"
             }
         }
-        stage("Remove image") {
-            steps {
-                /* removes the Docker image */
-         
-                sshCommand remote: remote, command: "docker rmi neverstopgaming/update-server"
-            }
-        }
         stage("Build image") {
             steps {
-                /* This builds the actual image; synonymous to
-                * docker build on the command line */
-         
                 sshCommand remote: remote, command: "cd autoupdate-server; docker build . -t neverstopgaming/update-server"
             }
         }
         stage("Deploy") {
             steps {
-                sshCommand remote: remote, command: "cd autoupdate-server; docker rm Update-Server; docker run --name Update-Server -d -p 803:3000 neverstopgaming/update-server"
+                sshCommand remote: remote, command: "cd autoupdate-server; docker run --name Update-Server -d -p 803:3000 neverstopgaming/update-server"
             }
         }
     }
