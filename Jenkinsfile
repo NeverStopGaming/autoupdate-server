@@ -16,7 +16,7 @@ pipeline {
                 sshCommand remote: remote, command: "rm -rf autoupdate-server; git clone https://github.com/NeverStopGaming/autoupdate-server.git"
             }
         }
-        stage("Build image") {
+        stage("Remove image") {
             steps {
                 /* removes the Docker image */
          
