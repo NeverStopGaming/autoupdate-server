@@ -21,7 +21,7 @@ pipeline {
                 /* This builds the actual image; synonymous to
                 * docker build on the command line */
          
-                sshCommand remote: remote, command: "cd autoupdate-server; docker build -t ${image} ."
+                sshCommand remote: remote, command: "cd autoupdate-server; docker build -t dockerfile ."
             }
         }
         stage("Deploy") {
