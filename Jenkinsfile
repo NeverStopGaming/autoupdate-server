@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("Clone repository") {
             steps {
-                sshCommand remote: remote, command: "git clone https://github.com/NeverStopGaming/autoupdate-server.git"
+                sshCommand remote: remote, command: "rm -rf autoupdate-server; git clone https://github.com/NeverStopGaming/autoupdate-server.git"
             }
         }
         stage("Build image") {
