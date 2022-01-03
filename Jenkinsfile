@@ -1,6 +1,10 @@
 def remote = [:]
 remote.name = "webspace"
-remote.host = "WEBSPACE_HOST"
+remote.host = "${WEBSPACE_HOST}"
+withCredentials([usernamePassword(credentialsId: "webspace", passwordVariable: 'password', usernameVariable: 'userName')]) {
+    remote.user = userName
+    remote.password = password
+}
 remote.allowAnyHosts = true
 pipeline {
     
