@@ -1,5 +1,5 @@
 # Autoupdate Server
-Autoupdater server for plugins form NeverStopGaming
+Autoupdater server for plugins from NeverStopGaming
 
 ### Install
 
