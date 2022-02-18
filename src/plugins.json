@@ -10,5 +10,9 @@
     "SimpleCloud-Dynamic-IP-Module": {
         "version": "1.0",
         "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.1/SimpleCloud-Haste-Module-1.1.jar"
+    },
+    "SimpleCloud-bedrock": {
+        "version": "1.0",
+        "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.1/SimpleCloud-Haste-Module-1.1.jar"
     }
 }
