@@ -3,16 +3,8 @@
         "version": "1.1",
         "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.1/SimpleCloud-Haste-Module-1.1.jar"
     },
-    "SimpleCloud-Stats-Module": {
+    "SimpleCloud-Placeholders": {
         "version": "1.0",
-        "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.0/SimpleCloud-Haste-Module-1.0.jar"
-    },
-    "SimpleCloud-Dynamic-IP-Module": {
-        "version": "1.0",
-        "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.1/SimpleCloud-Haste-Module-1.1.jar"
-    },
-    "SimpleCloud-bedrock": {
-        "version": "1.0",
-        "url": "https://github.com/NeverStopGaming/SimpleCloud-haste-module/releases/download/v1.1/SimpleCloud-Haste-Module-1.1.jar"
+        "url": "https://github.com/NeverStopGaming/SimpleCloud-Placeholders/releases/download/v1.0/SimpleCloud-Haste-1.0.jar"
     }
 }
